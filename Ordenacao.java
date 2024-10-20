@@ -30,7 +30,7 @@ public class Ordenacao {
 
     public void GnomeSort(int tamanho){
         int[] arr = Array(tamanho);
-       
+       //implementar
 
     }
     public void exibir(int[] arr,int tamanho){
