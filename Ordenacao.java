@@ -1,6 +1,6 @@
 package Ra4;
 import java.util.Random;
-
+//Wkyouma
 public class Ordenacao {
     private Random random;
 
@@ -29,8 +29,22 @@ public class Ordenacao {
     }
 
     public void GnomeSort(int tamanho){
-        int[] arr = Array(tamanho);
-       //implementar
+        int[] Gnome = Array(tamanho);
+        int i = 0;
+        while(i<tamanho - 1){
+            if(Gnome[i]>Gnome[i+1]){
+                int temp = Gnome[i]; 
+                Gnome[i] = Gnome[i+1];   
+                Gnome[i+1] = temp;
+                if(i>0)
+                {
+                    i--;
+                }
+            }else{
+                i++;
+            }
+        }
+        exibir(Gnome, tamanho);
 
     }
     public void exibir(int[] arr,int tamanho){
@@ -46,6 +60,6 @@ public class Ordenacao {
         Ordenacao main = new Ordenacao(); 
 
         
-        main.InsertionSort(100); 
+        main.GnomeSort(10);
     }
 }
