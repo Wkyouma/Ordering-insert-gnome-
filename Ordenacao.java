@@ -16,26 +16,32 @@ public class Ordenacao {
     }
     public void InsertionSort(int tamanho) {
         int[] arr = Array(tamanho);
+        int trocas = 0;
         for (int i = 1; i < tamanho; i++) {
-            int key = arr[i];
-            int a = i - 1;
-            while (a >= 0 && arr[a] > key) {
-                arr[a + 1] = arr[a];
-                a--;
+            int temp = arr[i];
+            int a = i;
+            while (a > 0 && arr[a-1] > temp) {
+                arr[a] = arr[a-1];
+                a-=1;
+                trocas++;
             }
-            arr[a + 1] = key;
+            arr[a] = temp;
         }
+       
        exibir(arr, tamanho);
+       System.out.println("Trocas: " + trocas);
     }
 
     public void GnomeSort(int tamanho){
         int[] Gnome = Array(tamanho);
         int i = 0;
+        int trocas = 0;
         while(i<tamanho - 1){
             if(Gnome[i]>Gnome[i+1]){
                 int temp = Gnome[i]; 
                 Gnome[i] = Gnome[i+1];   
                 Gnome[i+1] = temp;
+                trocas++;
                 if(i>0)
                 {
                     i--;
@@ -44,6 +50,7 @@ public class Ordenacao {
                 i++;
             }
         }
+        System.out.println("Trocas: " + trocas);
         exibir(Gnome, tamanho);
 
     }
@@ -61,5 +68,6 @@ public class Ordenacao {
 
         
         main.GnomeSort(10);
+        main.InsertionSort(111);
     }
 }
